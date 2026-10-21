@@ -1,0 +1,5 @@
+size,status,unique_values,repeated_values,chi_square,sizes_valid,ranges_valid,ascending_valid,descending_valid,elements_valid,interval_1,interval_2,interval_3,interval_4,interval_5,interval_6,interval_7,interval_8,interval_9
+1000,VALID,1000,0,9.602,True,True,True,True,True,128,106,108,106,100,120,99,129,104
+10000,VALID,10000,0,5.3036,True,True,True,True,True,1165,1111,1090,1102,1098,1070,1108,1125,1131
+100000,VALID,99939,61,2.8126,True,True,True,True,True,11179,11064,11147,11096,11109,11099,11223,11058,11025
+1000000,VALID,994372,5628,6.5534,True,True,True,True,True,111623,111283,111286,110975,110857,110810,110736,111028,111402
