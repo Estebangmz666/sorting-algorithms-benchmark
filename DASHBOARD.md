@@ -64,3 +64,19 @@ versión del compilador ni identificador de corrida. Pendiente o fallido no sign
 `python -m unittest discover -s scripts/tests -p 'test_dashboard_*.py' -v`
 
 Las pruebas usan archivos temporales; no ejecutan los benchmarks ni alteran sus resultados.
+
+## GitHub Pages
+
+Dashboard publicado: https://estebangmz666.github.io/ordenamiento/
+
+El HTML se aloja en `ordenamiento/index.html` del repositorio personal
+`Estebangmz666/estebangmz666.github.io`. Para actualizar los datos publicados,
+genera nuevamente `charts/dashboard.html` y reemplaza ese archivo de destino.
+GitHub Pages publica la actualización mediante su despliegue de la rama `main`.
+
+El informe del Punto 1 está redactado en `INFORME_PUNTO_1.md`; conserva las
+referencias relativas a los seis PNG de `charts/`. Repositorio del código:
+https://github.com/Estebangmz666/sorting-algorithms-benchmark
+
+El repositorio de alojamiento del dashboard y el repositorio del código de los
+algoritmos tienen propósitos distintos.
