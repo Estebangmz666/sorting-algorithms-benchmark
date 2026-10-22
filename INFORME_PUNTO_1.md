@@ -161,6 +161,8 @@ Entre las mediciones de este escenario, C++ obtuvo tiempos menores en los cinco 
 
 También cambió el algoritmo más rápido. En C++ ganó Radix Sort, con 33,25966 ms, seguido por Bucket Sort y Dual-Pivot QuickSort. En Python ganó Dual-Pivot QuickSort, con 1.811,931 ms; Radix Sort obtuvo 3.478,57982 ms. El costo de ocho recorridos con operaciones por dígito y de las estructuras auxiliares puede superar la ventaja asintótica de Radix en el rango evaluado. Además, sus transferencias de buffers difieren entre lenguajes. Estas diferencias de implementación y del costo de sus operaciones ayudan a interpretar los resultados; los CSV no aíslan cuánto aporta cada una.
 
+Las versiones de C++ se ejecutan como código nativo obtenido antes de la medición. En el modelo de ejecución de CPython, el código Python se compila a bytecode que ejecuta el intérprete [5,6]. El trabajo de ejecutar esas instrucciones puede añadir costos a los bucles y a sus operaciones, aunque ambos programas sigan la misma estrategia de ordenamiento. Esa diferencia ofrece un contexto para interpretar los tiempos menores de C++ en las comparaciones medidas. Se refiere a la ejecución del algoritmo; el arranque del intérprete y la preparación de los módulos quedan fuera del intervalo cronometrado. Los CSV no permiten aislar cuánto aporta cada costo ni atribuir los resultados a optimizaciones del compilador que no se registraron.
+
 Los cocientes describen estas versiones, archivos y ejecuciones. No permiten afirmar que C++ siempre supere a Python por un factor fijo ni que el algoritmo con mejor orden teórico deba ganar para cualquier tamaño.
 
 ## 7 Estimaciones timeout y dispersión
@@ -214,5 +216,8 @@ Las siguientes fuentes respaldan la discusión teórica y las definiciones emple
 2. MIT OpenCourseWare (2008). *6.006 Introduction to Algorithms, Lecture 11: Stable Sorting, Radix Sort*. https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2008/0c8bb24ef91668bfe85f1eaee80e72a0_lec11.pdf
 3. Wild, S., Nebel, M. E. y Neininger, R. (2015). *Average Case and Distributional Analysis of Dual-Pivot Quicksort*. arXiv:1304.0988. https://arxiv.org/abs/1304.0988
 4. Sedgewick, R. y Wayne, K. *Algorithms, 4th Edition: Algorithms and Data Structures Cheatsheet; Sorting Applications*. Princeton University. https://algs4.cs.princeton.edu/cheatsheet/ y https://algs4.cs.princeton.edu/25applications/
+
+5. Free Software Foundation. *Using the GNU Compiler Collection, Overall Options*. Etapas de compilación y construcción del ejecutable. https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html
+6. Python Software Foundation. *Python Glossary, bytecode e interpreted*. https://docs.python.org/3/glossary.html#term-bytecode y https://docs.python.org/3/glossary.html#term-interpreted
 
 **Datos experimentales:** `results/results_cpp.csv` y `results/results_py.csv` del repositorio del proyecto. Las seis figuras y las tablas de este informe se elaboraron a partir de esos archivos.
